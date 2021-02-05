@@ -1,0 +1,59 @@
+ {
+  "app-id": "org.buchen.PortfolioPerformance",
+  "runtime": "org.gnome.Platform",
+  "sdk": "org.gnome.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.openjdk11"
+  ],
+  "command": "/app/jre/bin/PortfolioPerformance",
+  "finish-args": [
+    "--persist=.java",
+    "--socket=x11",
+    "--socket=wayland",
+    "--socket=session-bus",
+    "--share=network",
+    "--share=ipc",
+    "--env=PATH=/app/jre/bin:/usr/bin",
+    "--env=JAVA_HOME=/app/jre",
+    "--filesystem=host"
+  ],
+  "build-options": {
+    "append-path": "/usr/lib/sdk/openjdk11/bin"
+  },
+  "modules": [
+    {
+      "name": "openjdk",
+      "buildsystem": "simple",
+      "build-commands": [
+        "/usr/lib/sdk/openjdk11/install.sh"
+      ]
+    },
+
+    {
+      "name": "PortfolioPerformance",
+      "buildsystem": "simple",
+      "build-commands": [
+        "ls",
+	"unzip plugins/name.abuchen.portfolio.ui_0.50.3.jar 'icons/*'",
+        "install -Dm644 icons/pp_16.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icons/pp_48.png /app/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icons/pp_256.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
+        "install -Dm644 icons/pp_512.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png",
+        "rm -rf icons",
+        "install -Dm 644 org.portfolio.PortfolioPerformance.desktop /app/share/applications/org.portfolio.PortfolioPerformance.desktop",
+        "mv * /app/jre/bin/"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/buchen/portfolio/releases/download/0.50.3/PortfolioPerformance-0.50.3-linux.gtk.x86_64.tar.gz",
+          "sha512": "0d6349454a7fd46711cacba62f4f2b1bd569f9bf08f7e2cc251292d2e5d46251428b7c272a0cf87e41171cfe3ebb80fc0660dbc62c7df6f1a01aef4bbae76969"
+        },
+        {
+          "type" : "file",
+          "path" : "org.portfolio.PortfolioPerformance.desktop"
+        }
+      ]
+    }
+  ]
+}
