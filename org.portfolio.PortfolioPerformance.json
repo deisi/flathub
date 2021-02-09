@@ -1,5 +1,5 @@
  {
-  "app-id": "org.portfolio.portfolioperformance",
+  "app-id": "org.portfolio.PortfolioPerformance",
   "runtime": "org.gnome.Platform",
   "sdk": "org.gnome.Sdk",
   "sdk-extensions": [
@@ -7,15 +7,12 @@
   ],
   "command": "/app/jre/bin/PortfolioPerformance",
   "finish-args": [
-    "--persist=.java",
     "--socket=x11",
     "--socket=wayland",
-    "--socket=session-bus",
     "--share=network",
-    "--share=ipc",
-    "--env=PATH=/app/jre/bin:/usr/bin",
-    "--env=JAVA_HOME=/app/jre",
-    "--filesystem=host"
+    "--filesystem=home",
+    "--device=dri",
+    "--env=PATH=/app/jre/bin:/usr/bin"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/openjdk11/bin"
@@ -39,8 +36,8 @@
         "install -Dm644 icons/pp_256.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
         "install -Dm644 icons/pp_512.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png",
         "rm -rf icons",
-        "install -Dm644 org.portfolio.portfolioperformance.appdata.xml /app/share/metainfo/org.portfolio.portfolioperformance.appdata.xml",
-        "install -Dm 644 org.portfolio.portfolioperformance.desktop /app/share/applications/org.portfolio.portfolioperformance.desktop",
+        "install -Dm644 org.portfolio.PortfolioPerformance.appdata.xml /app/share/metainfo/org.portfolio.PortfolioPerformance.appdata.xml",
+        "install -Dm 644 org.portfolio.PortfolioPerformance.desktop /app/share/applications/org.portfolio.PortfolioPerformance.desktop",
         "mv * /app/jre/bin/"
       ],
       "sources": [
@@ -51,11 +48,11 @@
         },
         {
           "type" : "file",
-          "path" : "org.portfolio.portfolioperformance.desktop"
+          "path" : "org.portfolio.PortfolioPerformance.desktop"
         },
         {
           "type" : "file",
-          "path" : "org.portfolio.portfolioperformance.appdata.xml"
+          "path" : "org.portfolio.PortfolioPerformance.appdata.xml"
         }
       ]
     }
