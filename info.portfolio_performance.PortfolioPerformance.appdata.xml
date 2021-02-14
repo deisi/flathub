@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.portfolio.PortfolioPerformance</id>
+  <id>info.portfolio_performance.PortfolioPerformance</id>
   <name>PortfolioPerformance</name>
   <summary>An open source tool to calculate the overall performance of an investment portfolio.</summary>
   <url type="homepage">https://www.portfolio-performance.info/en/</url>
@@ -18,7 +18,7 @@
     <release type="stable" date="2021-02-07T00:00:01Z" version="0.50.4"/>
   </releases>
   <content_rating type="oars-1.0"/>
-  <launchable type="desktop-id">org.portfolio.PortfolioPerformance.desktop</launchable>
+  <launchable type="desktop-id">info.portfolio_performance.PortfolioPerformance.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <image>https://www.portfolio-performance.info/en/images/screenshot2@2x.png</image>
