@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+exit 0
+
 GIT_USER_NAME=$(git config user.name)
 GIT_USER_EMAIL=$(git config user.email)
 
