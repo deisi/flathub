@@ -5,6 +5,9 @@ on:
   push:
 jobs:
   check_upstream_version:
+    env:
+      GIT_USER_NAME: "GitHub Action"
+      GIT_USER_EMAIL: "action@github.com"
     name: Check upstream version
     runs-on: ubuntu-latest
     steps: 
