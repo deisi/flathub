@@ -31,7 +31,7 @@
       "name": "PortfolioPerformance",
       "buildsystem": "simple",
       "build-commands": [
-	"unzip plugins/name.abuchen.portfolio.ui_0.50.4.jar 'icons/*'",
+	"unzip plugins/name.abuchen.portfolio.ui_*.jar 'icons/*'",
         "install -Dm644 icons/pp_16.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png",
         "install -Dm644 icons/pp_48.png /app/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png",
         "install -Dm644 icons/pp_256.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
@@ -45,7 +45,13 @@
         {
           "type": "archive",
           "url": "https://github.com/buchen/portfolio/releases/download/0.50.4/PortfolioPerformance-0.50.4-linux.gtk.x86_64.tar.gz",
-          "sha512": "137f1abcf48a3947ecca1fb838ba8d4030a386910dcb2970ac918414ec757aa8f2c64f9594861970bb56f74a5f269fedaf0b0b2ece5ea17161bbdcef54922f1c"
+          "sha256": "64ec3767277af9f4ff676b6775156a03cb55be07aafd36dd11da0093dbd23349",
+          "x-checker-data": {
+	   "type": "json",
+           "url": "https://api.github.com/repos/buchen/portfolio/releases/latest",
+ 	   "version-query": ".tag_name",
+	   "url-query": ".assets[] | select(.name==\"PortfolioPerformance-\" + $version + \"-linux.gtk.x86_64.tar.gz\") | .browser_download_url"
+	  }
         },
         {
           "type" : "file",
