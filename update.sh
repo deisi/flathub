@@ -6,7 +6,6 @@ set -e
 
 CWD=$(pwd)
 
-exit 0
 podman run --rm --privileged \
     -v $HOME:$HOME:rslave \
     -v $CWD:$CWD:rslave \
