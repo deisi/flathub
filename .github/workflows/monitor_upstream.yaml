@@ -9,7 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2
-    - name: Install podman
-      run: sudo apt install --yes podman
     - run: ./update.sh --update
 
