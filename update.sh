@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 GIT_USER_NAME=$(git config user.name)
@@ -6,7 +6,6 @@ GIT_USER_EMAIL=$(git config user.email)
 
 CWD=$(pwd)
 
-exit 0
 podman run --rm --privileged \
     -v $HOME:$HOME:rslave \
     -v $CWD:$CWD:rslave \
